@@ -1,0 +1,16 @@
+class Solution {
+    public int[] pascalTriangleII(int r) {
+
+        int ans=1;
+        int[] ar=new int[r];
+        ar[0]=ans;  
+        for(int i=1;i<r;i++){
+
+            ans=ans*(r-i)/i;
+            ar[i]=ans;
+
+        }
+        return ar;
+
+    }
+}
