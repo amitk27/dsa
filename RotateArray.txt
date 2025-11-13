@@ -1,0 +1,24 @@
+class Solution {
+    public void rotateMatrix(int[][] matrix) {
+        int[][] ar=new int[matrix.length][matrix.length];
+          int k=matrix.length-1;
+        for(int i=0;i<matrix.length;i++){
+          
+            for(int j=0;j<matrix.length;j++){
+                        ar[j][k]=matrix[i][j];
+                }
+                k--;
+        }
+        
+        for(int i=0;i<ar.length;i++){
+
+            for(int j=0;j<matrix.length;j++){
+                        matrix[i][j]=ar[i][j];
+                }
+
+        }
+        
+
+        
+    }
+}

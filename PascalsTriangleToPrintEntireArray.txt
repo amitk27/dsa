@@ -1,0 +1,24 @@
+import java.util.*;
+class Solution {
+    public List<List<Integer>> pascalTriangleIII(int n) {
+
+        List<List<Integer>> list=new ArrayList<>();
+        for(int i=1;i<=n;i++){
+            List<Integer> tempList=generateRow(i);
+            list.add(tempList);
+        }
+        return list;
+       
+    }
+    private List<Integer> generateRow(int row){
+
+        List<Integer> list=new ArrayList<>();
+        int ans=1;
+        list.add(ans);
+        for(int i=1;i<row;i++){
+            ans=(ans*(row-i))/i;
+            list.add(ans);
+        }
+        return list;
+    }
+}
