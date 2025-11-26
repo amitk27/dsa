@@ -1,0 +1,49 @@
+class Solution {
+    public void rotateMatrix(int[][] matrix) {
+      
+        
+        //Transpose of matrix
+        int n=matrix.length;
+
+
+
+        for(int i=0;i<n-1;i++){
+
+            for(int j=i+1;j<n;j++){
+
+                swap(matrix,i,j,j,i);
+
+
+            }
+
+        }
+        for(int i=0;i<n;i++){
+
+            reverseMatrix(matrix[i]);
+
+        }
+        
+    }
+
+    public void reverseMatrix(int [] rowMatrix){
+
+        int n=rowMatrix.length-1;
+        int i=0;
+        while(i<n){
+            int temp=rowMatrix[i];
+            rowMatrix[i]=rowMatrix[n];
+            rowMatrix[n]=temp;
+            i++;
+            n--;
+
+        }
+
+    }
+
+    public void swap(int[][] matrix,int r1,int col1,int row2,int col2){
+
+                    int temp=matrix[r1][col1];
+                    matrix[r1][col1]=matrix[row2][col2];
+                    matrix[row2][col2]=temp;
+    }
+}
